@@ -13,8 +13,8 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion '23.0.1'
+    compileSdkVersion 21
+    buildToolsVersion '21.0.1'
 
     packagingOptions {
         exclude 'META-INF/NOTICE.txt'
@@ -44,18 +44,21 @@ android {
             debuggable true
             jniDebuggable true
             signingConfig signingConfigs.debug
+            applicationIdSuffix '.debug'
         }
 
         release {
             debuggable false
             jniDebuggable false
             signingConfig signingConfigs.release
+            applicationIdSuffix '.release'
         }
 
         foss {
             debuggable false
             jniDebuggable false
             signingConfig signingConfigs.release
+            applicationIdSuffix '.release'
         }
     }
 
@@ -78,8 +81,9 @@ android {
 
     defaultConfig {
         minSdkVersion 8
-        targetSdkVersion 22
+        targetSdkVersion 21
         versionCode 627
         versionName "3.2.2"
+        applicationId "ir.lightway.telegram"
     }
 }
